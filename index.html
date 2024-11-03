@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive World Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Kathir's Interactive World Clock</h1>
+            <button id="darkModeToggle" onclick="toggleDarkMode()">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </header>
+
+        <section id="main-clock">
+            <div class="analog-clock">
+                <div class="center-dot"></div>
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+                <div class="second-hand"></div>
+
+                <!-- Clock Numbers -->
+                <div class="numbers">
+                    <div class="number twelve">12</div>
+                    <div class="number one">1</div>
+                    <div class="number two">2</div>
+                    <div class="number three">3</div>
+                    <div class="number four">4</div>
+                    <div class="number five">5</div>
+                    <div class="number six">6</div>
+                    <div class="number seven">7</div>
+                    <div class="number eight">8</div>
+                    <div class="number nine">9</div>
+                    <div class="number ten">10</div>
+                    <div class="number eleven">11</div>
+                </div>
+            </div>
+            <div id="digitalClock"></div>
+            <select id="timezoneSelect" onchange="updateTimezone()">
+                <option value="Pacific/Auckland">Auckland</option>
+                <option value="Europe/Amsterdam">Amsterdam</option>
+                <option value="Asia/Bahrain">Bahrain</option>
+                <option value="Europe/Berlin">Berlin</option>
+                <option value="America/Argentina/Buenos_Aires">Buenos Aires</option>
+                <option value="America/Bogota">Bogotá</option>
+                <option value="Africa/Cairo">Cairo</option>
+                <option value="America/Chicago">Chicago</option>
+                <option value="Asia/Dubai">Dubai</option>
+                <option value="Asia/Hong_Kong">Hong Kong</option>
+                <option value="Pacific/Honolulu">Honolulu</option>
+                <option value="Asia/Karachi">Karachi</option>
+                <option value="Asia/Jakarta">Jakarta</option>
+                <option value="Asia/Kolkata" selected>India</option>
+                <option value="Europe/London">London</option>
+                <option value="America/Los_Angeles">Los Angeles</option>
+                <option value="Europe/Madrid">Madrid</option>
+                <option value="Asia/Manila">Manila</option>
+                <option value="Australia/Melbourne">Melbourne</option>
+                <option value="America/Mexico_City">Mexico City</option>
+                <option value="Europe/Moscow">Moscow</option>
+                <option value="America/New_York">New York</option>
+                <option value="Europe/Paris">Paris</option>
+                <option value="Asia/Seoul">Seoul</option>
+                <option value="Asia/Shanghai">Shanghai</option>
+                <option value="Asia/Singapore">Singapore</option>
+                <option value="America/Sao_Paulo">São Paulo</option>
+                <option value="Australia/Sydney">Sydney</option>
+                <option value="America/Toronto">Toronto</option>
+                <option value="America/Vancouver">Vancouver</option>
+                <option value="Europe/Zurich">Zurich</option>
+                <option value="Africa/Johannesburg">Johannesburg</option>
+                <option value="Asia/Tokyo">Tokyo</option>
+                <option value="America/Lima">Lima</option>
+            </select>            
+        </section>
+        <div class="alarm-section mt-2">
+            <button id="alarmButton" onclick="showAlarmSettings()">Set Alarm</button>
+        </div>
+        <div id="alarmSettings" style="display: none;">
+            <input type="time" id="alarmTime"
+                style="padding: 8px; width: 10%; border: 1px solid #ced4da; border-radius: 4px; outline: none; font-size: 16px;" />
+            <input type="number" id="alarmSeconds" min="0" max="59" placeholder="Seconds"
+                style="padding: 8px; width: 10%; border: 1px solid #ced4da; border-radius: 4px; outline: none; font-size: 16px;" />
+            <button onclick="setAlarm()">Set Alarm Time</button>
+            <button id="goBackButton" onclick="goBack()">Go Back</button>
+        </div>
+        <div id="alarmMessage" style="margin-top: 10px; font-weight: bold;">No Alarm Set</div>
+    </div>
+    <div id="alarmNotification"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+        <p>Wake up! Alarm ringing!</p>
+        <button class="stopbtn" onclick="stopAlarm()">Stop Alarm</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
