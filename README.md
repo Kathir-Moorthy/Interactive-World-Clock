@@ -16,9 +16,10 @@ Check out a live demo of the Interactive World Clock!
 
 1) Clone the repository:
 git clone https://kathir-moorthy.github.io/Interactive-World-Clock/
+
 cd interactive-world-clock
 
-2) Open index.html in your browser:
+3) Open index.html in your browser:
 
 Simply double-click the index.html file, or use a local server to open it.
 
