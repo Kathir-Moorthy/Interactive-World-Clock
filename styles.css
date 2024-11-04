@@ -53,6 +53,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .hour-hand, .minute-hand, .second-hand {
@@ -68,15 +69,18 @@ button:hover {
 
 .hour-hand {
     width: 30%;  /* Adjust length of the hour hand */
+    z-index: 10;
 }
 
 .minute-hand {
     width: 45%;  /* Adjust length of the minute hand */
+    z-index: 11;
 }
 
 .second-hand {
     width: 48%;  /* Adjust length of the second hand */
     background-color: red;
+    z-index: 12;
 }
 
 #timezoneSelect {
@@ -125,6 +129,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .number {
@@ -147,8 +152,25 @@ button:hover {
 .ten { top: 30%; left: 12%; transform: translate(-50%, -50%); }
 .eleven { top: 14%; left: 28%; transform: translate(-50%, -50%); }
 
+.date-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px; /* Smaller font */
+    font-weight: normal;
+    color: #333;
+    border: solid 1px #333;
+    padding: 4px 8px; /* Less padding */
+    border-radius: 3px;
+    z-index: 2;
+}
+#alarmNotification {
+    z-index: 50;
+}
 .modal {
     position: fixed;
+    z-index: 50;
     top: 0;
     left: 0;
     width: 100%;
@@ -163,11 +185,13 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    z-index: 50;
 }
 .modal-content button {
     padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
+    z-index: 50;
 }
 .stopbtn{
     background-color: rgb(251, 27, 27); 
@@ -206,6 +230,12 @@ button:hover {
     color: #f0f0f0;
 }
 
+.dark-mode .date-container {
+    color: #f0f0f0;
+    background-color: rgba(50, 50, 50, 0.8); /* Adjust background for dark mode */
+    border: solid 1px #f0f0f0;
+}
+
 .dark-mode #alarmNotification{
     background-color: #282828 !important;
 }
@@ -226,6 +256,12 @@ button:hover {
     }
     #alarmMessage {
         display: block;
+    }
+    .date-container {
+        position: absolute;
+        bottom: 19%%;
+        font-size: 11px; /* Smaller font */
+        padding: 3px 6px; /* Less padding */
     }
 }
 

@@ -49,6 +49,7 @@ function updateTimezone() {
     if (!alarmActive) { // Disable timezone change when alarm is active
         currentTimezone = timezones.value;
         updateClock();
+        updateDateAndDay(currentTimezone); // Ensure the date updates with timezone change
     }
 }
 
@@ -150,3 +151,18 @@ function stopAlarm() {
 // Initialize the clock
 updateClock();
 setInterval(updateClock, 1000); // Update clock every second
+
+// Date and Day Update
+function updateDateAndDay(timezone) {
+    const date = new Date().toLocaleDateString('en-US', {
+        timeZone: timezone,
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+    document.getElementById('dateContainer').innerText = date;
+}
+
+// Initial date update based on current timezone
+updateDateAndDay(currentTimezone);
