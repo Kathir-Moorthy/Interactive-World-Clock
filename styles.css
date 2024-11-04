@@ -263,6 +263,9 @@ button:hover {
         font-size: 11px; /* Smaller font */
         padding: 3px 6px; /* Less padding */
     }
+    #timezoneSelect{
+        width: 35%;
+    }
 }
 
 @media (max-width: 400px) {
