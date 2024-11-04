@@ -242,8 +242,8 @@ button:hover {
 /* Responsive Styles */
 @media (max-width: 600px) {
     .analog-clock {
-        width: 150px;
-        height: 150px;
+        width: 300px;
+        height: 300px;
     }
 
     button {
@@ -259,7 +259,7 @@ button:hover {
     }
     .date-container {
         position: absolute;
-        bottom: 19%%;
+        bottom: 19%;
         font-size: 11px; /* Smaller font */
         padding: 3px 6px; /* Less padding */
     }
@@ -267,8 +267,8 @@ button:hover {
 
 @media (max-width: 400px) {
     .analog-clock {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
     }
 
     button {
